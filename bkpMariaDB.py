@@ -15,11 +15,11 @@ LPORTA   = 3306
 LBANCO   = 'hermes'
 LDESTINO = 'c:/temp'
 LHOST    = 'localhost'
-LPATHDUMP= 'C:/Program Files/MariaDB 10.9/bin'
+LPATHDUMP= '"C:/Program Files/MariaDB 10.9/bin/mysqldump"'
 
 LNomeArquivoDestino = "%s/%s-%s.sql" % (LDESTINO, LBANCO, LDATA)
 print('Arquivo de destino: ',LNomeArquivoDestino)
-ComandoBkp =  ("%s/mysqldump -u %s -p%s -h %s -e --opt -B -R -c %s > %s" % (LPATHDUMP,LUSUARIO, LSENHA, LHOST, LBANCO, LNomeArquivoDestino))
+ComandoBkp =  ("%s -u %s -p%s -h %s -e --opt -B -R -c %s > %s" % (LPATHDUMP,LUSUARIO, LSENHA, LHOST, LBANCO, LNomeArquivoDestino))
 print(ComandoBkp)
 cmd_result = commands.getoutput(ComandoBkp)
 
