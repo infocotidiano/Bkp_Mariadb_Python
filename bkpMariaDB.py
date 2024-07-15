@@ -1,6 +1,6 @@
 # program       bkpMariDB.py
 # author        Daniel de Morais
-# installarion  Backup base de dados Banco MariaDB
+# installation  Backup base de dados Banco MariaDB
 # date-written  14/07/2024
 
 import time
