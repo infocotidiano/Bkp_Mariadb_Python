@@ -1,3 +1,8 @@
+# program       ConfigBkp.py
+# author        Daniel de Morais InfoCotidiano
+# installation  Configurador Backup base de dados Banco MariaDB
+# date-written  14/07/2024
+
 import json
 
 def get_input(prompt):
