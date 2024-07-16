@@ -13,9 +13,12 @@ import json
 LDATA    = time.strftime('%Y%m%d_%H%M%S')
 
 if os.path.exists('config.json'):
-    # Abre e lê o arquivo
     with open('config.json', 'r') as file:
         config = json.load(file)
+else:
+    print("Arquivo de configuração não encontrado")
+    print("Backup não realizado! ")
+    sys.exit(1)      
 
 LUSUARIO = config.get('Usuario')
 LSENHA   = config.get('Senha')
@@ -49,4 +52,3 @@ else:
     print("Backup realizado com sucesso!")
     print("Valide constatemente o seu backup.")
     print("Use por conta e risco !")
-

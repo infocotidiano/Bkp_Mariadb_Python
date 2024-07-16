@@ -1,6 +1,8 @@
 import json
 
 def get_input(prompt):
+    print('Configuração do Backup')
+    print('----------------------')
     return input(prompt).strip()
 
 # Solicitar os parâmetros ao usuário
