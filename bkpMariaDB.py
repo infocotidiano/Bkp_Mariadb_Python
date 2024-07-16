@@ -6,7 +6,7 @@
 import time
 import os
 import sys
-import subprocess as commands
+import subprocess 
 
 LDATA    = time.strftime('%Y%m%d_%H%M%S')
 LUSUARIO = 'root'
@@ -21,6 +21,12 @@ LNomeArquivoDestino = "%s/%s-%s.sql" % (LDESTINO, LBANCO, LDATA)
 print('Arquivo de destino: ',LNomeArquivoDestino)
 ComandoBkp =  ("%s -u %s -p%s -h %s -e --opt -B -R -c %s > %s" % (LPATHDUMP,LUSUARIO, LSENHA, LHOST, LBANCO, LNomeArquivoDestino))
 print(ComandoBkp)
-cmd_result = commands.getoutput(ComandoBkp)
+cmd_result = subprocess.getoutput(ComandoBkp)
+LProcesso = subprocess.Popen(ComandoBkp, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+stdout, stderr = LProcesso.communicate()
+if LProcesso.returncode != 0:
+    print(f"Erro ao realizar o backup: {stderr.decode('utf-8')}")
+else:
+    print("Backup realizado com sucesso!")
 
 
