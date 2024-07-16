@@ -24,7 +24,7 @@ LBANCO   = config.get('NomeBanco')
 LDESTINO = config.get('PastaDestino')
 LHOST    = config.get('Host')
 LPATHDUMP= config.get('PathDUMP')
-LPATHDUMP= '"C:/Program Files/MariaDB 10.9/bin/mysqldump"'
+LPATHDUMP= f'"{LPATHDUMP}"'
 LQTDE_BKP= config.get('QtdeBackup')
 
 # Manter 5 Backups mais recentes
