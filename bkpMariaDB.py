@@ -8,16 +8,24 @@ import os
 import sys
 import subprocess 
 import glob
+import json
 
 LDATA    = time.strftime('%Y%m%d_%H%M%S')
-LUSUARIO = 'root'
-LSENHA   = 'Info@1234'
-LPORTA   = 3306
-LBANCO   = 'hermes'
-LDESTINO = 'c:/temp'
-LHOST    = 'localhost'
+
+if os.path.exists('config.json'):
+    # Abre e lê o arquivo
+    with open('config.json', 'r') as file:
+        config = json.load(file)
+
+LUSUARIO = config.get('Usuario')
+LSENHA   = config.get('Senha')
+LPORTA   = config.get('Porta')
+LBANCO   = config.get('NomeBanco')
+LDESTINO = config.get('PastaDestino')
+LHOST    = config.get('Host')
+LPATHDUMP= config.get('PathDUMP')
 LPATHDUMP= '"C:/Program Files/MariaDB 10.9/bin/mysqldump"'
-LQTDE_BKP= 5
+LQTDE_BKP= config.get('QtdeBackup')
 
 # Manter 5 Backups mais recentes
 os.chdir(LDESTINO)
