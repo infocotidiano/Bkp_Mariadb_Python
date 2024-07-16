@@ -1,0 +1,10 @@
+{
+    "Usuario": "root",
+    "Senha": "Info@1234",
+    "Host": "localhost",
+    "Porta": "3306",
+    "NomeBanco": "hermes",
+    "PathDUMP": "C:/Program Files/MariaDB 10.9/bin/mysqldump",
+    "PastaDestino": "c:/temp",
+    "QtdeBackup": 5
+}
